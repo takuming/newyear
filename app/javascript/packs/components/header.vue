@@ -5,12 +5,25 @@
         <li class="about">サービスについて</li>
         <li class="ci"><img v-bind:src="require('../images/ci.svg')" alt="newyear"></li>
         <li class="account">
-          <router-link to="/destroy_user_session_path" >アカウント</router-link>
+          <a v-on:click="signOut">アカウント</a> 
         </li>
       </ul>
     </nav>
   </header>
 </template>
+
+<script>
+import axios from 'axios';
+
+export default {
+  methods: {
+    signOut: function() {
+      axios
+      .delete('/destroy_user_session')
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .header {
@@ -33,3 +46,5 @@
 	}
 }
 </style>
+
+
