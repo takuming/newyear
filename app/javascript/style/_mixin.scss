@@ -1,0 +1,120 @@
+// フォント - テキスト
+
+@mixin fsn-xxs{
+  font-size: 8px;
+  line-height: 1.4;
+};
+@mixin fsn-xs{
+  font-size: 10px;
+  line-height: 1.4;
+};
+@mixin fsn-s{
+  font-size: 12px;
+  line-height: 1.4;
+};
+@mixin fsn-m{
+  font-size: 14px;
+  line-height: 1.4;
+};
+@mixin fsn-l{
+  font-size: 16px;
+  line-height: 1.4;
+};
+
+
+// フォント - タイトル
+
+@mixin fst-xs{
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.6;
+};
+@mixin fst-s{
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.6;
+};
+@mixin fst-m{
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.6;
+};
+@mixin fst-l{
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.6;
+};
+@mixin fst-xl{
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.6;
+};
+@mixin fst-xxl{
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.6;
+};
+@mixin fst-huge{
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 1.6;
+};
+
+// 英語フォント
+@mixin eng_font{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+// フォーム周り
+@mixin form_text{
+  overflow: scroll;
+  border: none;
+  padding: 16px;
+  width: 100%;
+  outline: none;
+};
+@mixin form_textara{
+width: 100%;
+border: none;
+outline: none;
+}
+
+@mixin form_checkbox{
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+};
+
+@mixin form_label-check{
+  content: "";
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 16px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #dadbdd;
+  border-radius: 4px;
+};
+
+
+$text-color: #000 ;
+$transiton-base:all 0.8s ease-in;
+
+
+@mixin note{
+  background-color: white;
+    border-radius:8px;
+    padding: 48px;
+    width: 95%;
+    margin: 0 auto;
+    box-shadow: 1px 1px 12px 4px rgba(0,0,0, 0.04);
+}
+
+// 背景色
+@mixin bg-base{
+  background-color:#FAF8EC;
+}
+

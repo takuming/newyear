@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+//List周り
+
+.List {
+  width: 100%;
+  .project_Title {
+    @include fst-m;
+  }
+  .todoItem {
+    position: relative;
+    display: block;
+    margin-left: 24px;
+    margin-right: 6.4%;
+    th {
+      vertical-align: middle;
+    }
+    td {
+      input[type="text"] {
+        width: 440px;
+      }
+    }
+    .totalTime {
+      font-size: 12px;
+      font-family: helvetica;
+      font-weight: 300;
+      letter-spacing: 1px;
+      color: #a0a0aa;
+      padding-right: 16px;
+    }
+    .button {
+      button {
+        background-color: #dadbdd;
+        border-radius: 100px;
+        height: 32px;
+        width: 32px;
+        font-size: 12px;
+        color: #999;
+        margin-right: 16px;
+      }
+    }
+  }
+}
+// hover
+.todoItem{
+  cursor: pointer;
+    .button,.option_action{
+      display: none;
+    }
+}
+.todoItem{
+  &:hover{
+    .button,.option_action{
+      display: table-cell;
+    }
+  }
+}
+
+// log周り
+.log{
+  border-top: 1px solid #f3f3f4;
+  .wrapper{
+    padding:20px 0;
+    .worktime{
+      display: flex;
+      justify-content: space-between;
+      @include fsn-s;
+      font-family: helvetica;
+      font-weight: 300;
+      color: #a0a0aa;
+      margin-left:8%;
+      letter-spacing: 1px;
+      padding-right: 16px;
+      .progress{
+          letter-spacing:1px;
+          margin-right: 16px;
+          background:none;
+        .start{
+          letter-spacing:1px;
+          margin-right: 16px;
+        }
+        .end{
+          letter-spacing:1px;
+          margin-right: 16px;
+        }
+      }
+      .total{
+        margin-right: 10.5%;
+        .time_total{}
+      }
+      
+    }
+  }
+}
+
+
+// タスク追加
+.add_task{
+  .project_Title{
+    @include fsn-l;
+    .form{
+      min-height:640px;
+      @include form_textara;
+      input{
+          font-weight: bold;
+          letter-spacing: 2px;
+          margin-bottom: 24px;
+      }
+      input[text]{
+        margin-bottom: 24px;
+      }
+    }
+  }
+  .other_title{
+    @include fst-s;
+    color:#999;
+    .form{
+      min-height:640px;
+      @include form_textara;
+      ::placeholder{
+        color:#999;
+        font-weight:bold;
+      }
+    }
+  }
+}
