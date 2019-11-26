@@ -47,12 +47,17 @@
           </ul>
         </div>
     </div>
+    <div>
+      {{ info }}
+    </div>
     <Footer></Footer>
   </div>
 </template>
 
 
 <script>
+import axios from 'axios';
+
 import Header from "./packs/components/header.vue";
 import Footer from "./packs/components/footer.vue";
 
@@ -63,8 +68,14 @@ export default {
   },
   data: function() {
     return {
-      message: ""
+      message: "",
+      info:null,
     };
+  },
+  mounted () {
+    axios
+      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+      .then(response => (this.info = response))
   }
 };
 </script>
