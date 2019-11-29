@@ -1,32 +1,6 @@
 <template>
   <div>
     <router-view></router-view>
-    <div id="app">
-    <table>
-      <tbody>
-        <tr>
-          <th>ID</th>
-          <th>name</th>
-          <th>birth</th>
-          <th>department</th>
-          <th>gender</th>
-          <th>joined_date</th>
-          <th>payment</th>
-          <th>note</th>
-        </tr>
-        <tr v-for="e in employees" :key="e.id">
-          <td>{{ e.id }}</td>
-          <td>{{ e.name }}</td>
-          <td>{{ e.birth }}</td>
-          <td>{{ e.department }}</td>
-          <td>{{ e.gender }}</td>
-          <td>{{ e.joined_date }}</td>
-          <td>{{ e.payment }}</td>
-          <td>{{ e.note }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
   </div>
 </template>
 

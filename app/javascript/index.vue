@@ -8,6 +8,7 @@
         </div>
         <div class="section_contents">
           <ul class="content_wrapper">
+
             <li class="content _lookback">
               <router-link to="/lookback">
                 <div class="img">
@@ -20,6 +21,7 @@
                 </div>
               </router-link>
             </li>
+
             <li class="content _interest">
               <router-link to="/lookback">
               <div class="img">
@@ -71,11 +73,6 @@ export default {
       message: "",
       info:null,
     };
-  },
-  mounted () {
-    axios
-      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-      .then(response => (this.info = response))
   }
 };
 </script>

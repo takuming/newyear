@@ -7,14 +7,14 @@
           <h2>今年を振り返る</h2>
         </div>
         <ul>
-            <li>
-              <router-link to="/lookback/month">
+            <li v-on:click="createLbmonth">
+              <a>
                   <div class="left">
                     <p class="step">STEP1.</p>
                     <h3>月を振り返る</h3>
                   </div>
                   <div class="right"></div>    
-              </router-link>
+              </a>
             </li>
             <li>
               <router-link to="/lookback/reflection">今年の内省</router-link>
@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 import HeaderNav from "../components/header-nav.vue";
 
 export default {
@@ -38,6 +40,15 @@ export default {
     return {
       message: ""
     };
+  },
+  methods: {
+    createLbmonth: function(){
+      axios
+      .post('/api/v1/lbmonths', this.lbmonths)
+      .then(response =>{
+        this.$router.push({path:'/lookback/month'})
+      })
+    }
   }
 };
 </script>
