@@ -9,5 +9,10 @@ Rails.application.routes.draw do
       resources :employees, only: [:index, :show]
     end
   end
+  namespace :api, {format: 'json'} do
+    namespace :v1 do
+      resources :lbmonths, only: [:index, :show]
+    end
+  end
   
 end
