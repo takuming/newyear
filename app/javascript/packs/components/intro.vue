@@ -1,14 +1,39 @@
 <template>
     <div id="demo" class="opening">
       <div class="wrapper">
+
         <transition name="fade">
-            <div class="sec-first">
-              <div class="title">
-                <p>INTRODUCTION</p>
-                <h3>今年の内省リスト</h3>
-              </div>
-            </div>
+        <div v-if="show" class="sec-first">
+          <div class="title">
+            <p>INTRODUCTION</p>
+            <h3>今年の内省リスト</h3>
+          </div>
+          <div class="text">
+            できなかったこと、怒りを感じたこと
+            負の側面からじぶんを知っていきましょう
+          </div>
+          <div v-on:click="show = !show" class="button">
+            <p>ネクスト</p>
+          </div>
+        </div>
+        <div v-else class="sec-first second">
+          <div class="title">
+            <p>INTRODUCTION</p>
+            <h3>要素間のトランジションの項目を読むとよりよくできそうだよ</h3>
+          </div>
+          <div class="text">
+            できなかったこと、怒りを感じたこと
+            負の側面からじぶんを知っていきましょう
+          </div>
+          <div class="button">
+            <router-link to="/lookback/reflection">
+            <p>移動するよ</p>
+            </router-link>
+          </div>
+        </div>
         </transition>
+
+        
       </div> 
     </div>
 </template>
@@ -21,14 +46,6 @@ export default {
       show:true
     }
   },
-  mounted () {
-      setTimeout(
-            function() {
-              this.$router.push({path:'/intro'})
-            }.bind(this),
-            1000
-          );
-  }
 }
 </script>
 

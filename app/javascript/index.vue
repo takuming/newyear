@@ -10,7 +10,7 @@
           <ul class="content_wrapper">
 
             <li class="content _lookback">
-              <router-link to="/lookback">
+              <router-link to="/opening">
                 <div class="img">
                   <img v-bind:src="require('./packs/images/note_lookback.png')">
                 </div>
