@@ -2,17 +2,17 @@ class CreateLbmonths < ActiveRecord::Migration[5.2]
   def change
     create_table :lbmonths do |t|
       t.text :jan
-      t.text :feb
-      t.text :mar
-      t.text :apr
-      t.text :may
-      t.text :jun
-      t.text :jul
-      t.text :aug
-      t.text :sep
-      t.text :oct
-      t.text :nov
-      t.text :dec
+      t.text :feb, null: true, default: ""
+      t.text :mar, null: true, default: ""
+      t.text :apr, null: true, default: ""
+      t.text :may, null: true, default: ""
+      t.text :jun, null: true, default: ""
+      t.text :jul, null: true, default: ""
+      t.text :aug, null: true, default: ""
+      t.text :sep, null: true, default: ""
+      t.text :oct, null: true, default: ""
+      t.text :nov, null: true, default: ""
+      t.text :dec, null: true, default: ""
       t.references :Twentynineteen, foreign_key: true
 
       t.timestamps
