@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  jan: MyText
+  feb: MyText
+  mar: MyText
+  apr: MyText
+  may: MyText
+  jun: MyText
+  jul: MyText
+  aug: MyText
+  sep: MyText
+  oct: MyText
+  nov: MyText
+  dec: MyText
+  Twentynineteen: one
+
+two:
+  jan: MyText
+  feb: MyText
+  mar: MyText
+  apr: MyText
+  may: MyText
+  jun: MyText
+  jul: MyText
+  aug: MyText
+  sep: MyText
+  oct: MyText
+  nov: MyText
+  dec: MyText
+  Twentynineteen: two
