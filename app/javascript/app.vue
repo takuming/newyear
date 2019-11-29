@@ -15,6 +15,8 @@ import Lookback from "./packs/pages/lookback.vue";
 import LookbackMonth from "./packs/pages/month.vue";
 import LookbackReflection from "./packs/pages/reflection.vue";
 import LookbackCuriosity from "./packs/pages/curiosity.vue";
+import Opening from "./packs/components/opening.vue";
+import Intro from "./packs/components/intro.vue";
 
 const router = new VueRouter({
   routes: [
@@ -23,6 +25,8 @@ const router = new VueRouter({
     { path: "/lookback/month", component: LookbackMonth },
     { path: "/lookback/reflection", component: LookbackReflection },
     { path: "/lookback/curiosity", component: LookbackCuriosity },
+    { path: "/opening", component: Opening },
+    { path: "/intro", component: Intro },
   ]
 });
 

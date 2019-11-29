@@ -17,7 +17,7 @@
               </a>
             </li>
             <li>
-              <router-link to="/lookback/reflection">今年の内省</router-link>
+              <router-link to="/opening">今年の内省</router-link>
             </li>
             <li>
               <router-link to="/lookback/curiosity">今年の発見</router-link>
