@@ -19,10 +19,19 @@ class Api::V1::LbmonthsController < ApiController
     end
   end
 
+  def update
+    @lbmonth = Lbmonth.limit(1)
+    if @lbmonth.update_attributes(lbmonth_params)
+      head :no_content
+    else
+      render json: { errors: @employee.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
   private
 
     def set_lbmonth
-      @lbmonth = Lbmonth.find(params[:id])
+      @lbmonth = Lbmonth.limit(1)
     end
 
     def lbmonth_params

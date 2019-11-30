@@ -31,6 +31,7 @@
 import axios from 'axios';
 
 import HeaderNav from "../components/header-nav.vue";
+import LookbackMonth from "../pages/month.vue";
 
 export default {
   components: {
@@ -46,7 +47,7 @@ export default {
       axios
       .post('/api/v1/lbmonths', this.lbmonths)
       .then(response =>{
-        this.$router.push({path:'/lookback/month'})
+        this.$router.push({name:'LookbackMonth'})
       })
     }
   }
