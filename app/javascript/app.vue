@@ -15,6 +15,8 @@ import Lookback from "./packs/pages/lookback.vue";
 import LookbackMonth from "./packs/pages/month.vue";
 import LookbackReflection from "./packs/pages/reflection.vue";
 import LookbackCuriosity from "./packs/pages/curiosity.vue";
+import Setgoal from "./packs/pages/setgoal.vue";
+import SetgoalNew from "./packs/pages/setgoalNew.vue";
 import Opening from "./packs/components/opening.vue";
 import Intro from "./packs/components/intro.vue";
 
@@ -22,6 +24,8 @@ const router = new VueRouter({
   routes: [
     { path: "/", component: Index },
     { path: "/lookback", component: Lookback },
+    { path: "/setgoal", component: Setgoal },
+    { path: "/setgoal/new", component: SetgoalNew },
     { path: "/lookback/month", component: LookbackMonth },
     { path: "/lookback/reflection", component: LookbackReflection },
     { path: "/lookback/curiosity", component: LookbackCuriosity },

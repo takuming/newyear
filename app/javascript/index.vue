@@ -35,7 +35,7 @@
               </router-link>
             </li>
             <li class="content _goalset">
-              <router-link to="/lookback">
+              <router-link to="/setgoal">
               <div class="img">
                 <img v-bind:src="require('./packs/images/note_goalset.png')">
               </div>

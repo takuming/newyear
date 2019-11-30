@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_29_025232) do
+ActiveRecord::Schema.define(version: 2019_11_30_023543) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 2019_11_29_025232) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "goals", force: :cascade do |t|
+    t.string "title"
+    t.text "action"
+    t.text "problem"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_goals_on_user_id"
+  end
+
   create_table "lbmonths", force: :cascade do |t|
     t.text "jan"
     t.text "feb"
@@ -55,6 +65,14 @@ ActiveRecord::Schema.define(version: 2019_11_29_025232) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["Twentynineteen_id"], name: "index_lbmonths_on_Twentynineteen_id"
+  end
+
+  create_table "setoals", force: :cascade do |t|
+    t.string "title", default: ""
+    t.text "action", default: ""
+    t.text "problem", default: ""
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "twentynineteens", force: :cascade do |t|
