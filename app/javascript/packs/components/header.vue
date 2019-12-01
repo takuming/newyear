@@ -18,12 +18,22 @@
 import axios from 'axios';
 
 export default {
+  data() {
+    return {
+      user: {}
+    }
+  },
+   mounted () {
+    axios
+      .get(`/api/v1/users/${this.$route.params.id}.json`)
+      .then(response => (this.user = response.data))
+  },
   methods: {
     signOut: function() {
       axios
-      .delete('/destroy_user_session')
+      .delete(`/api/v1/users/`)
     }
-  }
+  },
 }
 </script>
 
