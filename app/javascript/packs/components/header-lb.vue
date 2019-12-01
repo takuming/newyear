@@ -3,8 +3,12 @@
     <nav class="nav">
       <ul class="wrapper">
         <li class="back">
-          <span class="icon">←</span>
-          <p>戻る</p> 
+          <router-link to="/lookback">
+              <span class="icon">
+                <img v-bind:src="require('../images/arrow_back.svg')" alt="arrowback">
+              </span>
+              <p>戻る</p> 
+          </router-link>
         </li>
         <li class="save">保存する</li>
       </ul>
@@ -29,11 +33,21 @@ export default {
       width: 100%;
 			.back {
         padding: 12px 16px;
-        display: flex;
-        justify-content: space-between;
-				.icon {
-          margin-right: 12px
+        a{
+          display: flex;
+          justify-content: space-between;
+          text-decoration: none;
+          background-color: rgba(0,0,0,0.04);
+          border-radius: 100px;
+          padding: 12px 20px 10px 16px;
+          .icon {
+              margin-right: 12px
+          }
+          p{
+            padding: 4px 0;
+          }
         }
+				
         p{
           font-size:14px;
           font-weight: bold;

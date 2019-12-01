@@ -1,6 +1,6 @@
 <template>
   <div class="curiosity">
-    <HeaderNav2></HeaderNav2>
+    <HeaderLb></HeaderLb>
     <div class="title">
       <h3>今年の内省リスト</h3>
       <p>負の側面からポジティブな感情を見つけましょう</p>
@@ -18,10 +18,11 @@
 
 <script>
 
-import HeaderNav2 from "../components/header-nav2.vue";
+import HeaderLb from "../components/header-lb.vue";
+
 export default {
   components: {
-    HeaderNav2
+    HeaderLb
   },
  data() {
    return {
@@ -64,8 +65,6 @@ export default {
 	}
 	.note {
     @include note;
-    padding: 72px;
-    width: 95%;
 		.quesitions {
 			.item {
         border-bottom: 1px solid #f3f3f4;
@@ -75,7 +74,8 @@ export default {
           margin-bottom: 24px;
         }
         textarea{
-        @include fsn-m;  
+        @include fsn-m; 
+        @include text; 
         }
 			}
 		}

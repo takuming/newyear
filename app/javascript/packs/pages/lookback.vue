@@ -1,7 +1,7 @@
 <template>
 <transition>
     <div class="lookback">
-      <HeaderNav></HeaderNav>
+      <HeaderIndex></HeaderIndex>
       <div class="note">
         <div class="title">
           <p class="items">PHASE 1</p>
@@ -13,9 +13,11 @@
                   <div class="left">
                     <p class="step">STEP1.</p>
                     <h3>月を振り返る</h3>
+                    <p class="direct">
+                      <router-link to="/month">直接ノートに行く</router-link></p>
                   </div>
                   <div class="right">
-                    <i class="material-icons">keyboard_arrow_right</i>
+                    <img v-bind:src="require('../images/arrow_right.svg')" alt="arrow">
                   </div>    
               </a>
             </li>
@@ -33,12 +35,11 @@
 
 <script>
 import axios from 'axios';
-
-import HeaderNav from "../components/header-nav.vue";
+import HeaderIndex from "../components/header-index.vue";
 
 export default {
   components: {
-    HeaderNav
+    HeaderIndex
   },
   data: function() {
     return {
@@ -60,6 +61,7 @@ export default {
 <style lang="scss" scoped>
 @import "./app/javascript/style/global.scss";
 @import "./app/javascript/style/_mixin.scss";
+
 .header{
   margin-bottom: 16px;
 }
@@ -89,6 +91,7 @@ export default {
     width: 60%;
     margin: 0 auto;
     li{
+      cursor: pointer;
       a{
         display: flex;
       justify-content: space-between;
@@ -105,16 +108,33 @@ export default {
   }
 	   .left {
        .step{
-         font-size: 12px;
+         font-size: 10px;
          font-weight: bold;
          @include eng_font;
-         margin-bottom: 4px;
+         margin-bottom: 8px;
        }
        h3{
          @include fst-xs;
+         margin-bottom: 8px;
+       }
+       .direct{
+         font-size: 10px;
+         opacity: 0.56;
+         a{
+           padding: 0;
+           margin: 0;
+           &:hover{
+             background: none;
+             text-decoration: underline;
+             color: blue;
+           }
+         }
        }
 	    }
 	   .right {
+       img{
+         padding: 16px 0px;
+       }
 	    }
 }
 </style>

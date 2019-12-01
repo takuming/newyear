@@ -80,7 +80,6 @@ export default {
 @import "./app/javascript/style/global.scss";
 @import "./app/javascript/style/_mixin.scss";
 
-
 .index_wrapper{
   width: 1160px;
   margin: 0 auto;

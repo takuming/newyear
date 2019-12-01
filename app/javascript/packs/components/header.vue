@@ -3,7 +3,9 @@
     <nav class="nav">
       <ul class="wrapper">
         <li class="about">サービスについて</li>
-        <li class="ci"><img v-bind:src="require('../images/ci.svg')" alt="newyear"></li>
+        <li class="ci">
+          <img v-bind:src="require('../images/ci.svg')" alt="newyear">
+          </li>
         <li class="account">
           <a v-on:click="signOut">アカウント</a> 
         </li>

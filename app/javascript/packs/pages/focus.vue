@@ -1,6 +1,6 @@
 <template>
   <div class="focus">
-    <HeaderNav2></HeaderNav2>
+    <HeaderIndex></HeaderIndex>
     <div class="title">
       <p>PHASE2</p>
       <h3>取り組みたいことを 書き上げる</h3>
@@ -18,10 +18,10 @@
 
 <script>
 
-import HeaderNav2 from "../components/header-nav2.vue";
+import HeaderIndex from "../components/header-index.vue";
 export default {
   components: {
-    HeaderNav2
+    HeaderIndex
   },
  data() {
    return {
@@ -72,8 +72,6 @@ export default {
 	}
 	.note {
     @include note;
-    padding: 72px;
-    width: 95%;
 		.quesitions {
 			.item {
         border-bottom: 1px solid #f3f3f4;
@@ -84,6 +82,7 @@ export default {
         }
         textarea{
         @include fsn-m;  
+        @include text;
         }
 			}
 		}

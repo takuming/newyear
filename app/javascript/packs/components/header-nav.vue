@@ -2,9 +2,11 @@
   <header class="header">
     <nav class="nav">
       <ul class="wrapper">
-        <li class="about">サービスについて</li>
-        <li class="ci"><img v-bind:src="require('../images/ci.svg')" alt="newyear"></li>
-        <li class="account">アカウント</li>
+        <li class="back">
+          <span class="icon">X</span>
+          <p>戻る</p> 
+        </li>
+        <li class="save"></li>
       </ul>
     </nav>
   </header>
@@ -13,20 +15,31 @@
 <style lang="scss" scoped>
 .header {
   background: none;
-  width: 100%;
   padding: 20px 32px;
 	.nav {
 		.wrapper {
       display: flex;
       justify-content: space-between;
       width: 100%;
-      .about{
-        font-size: 12px;
-      }
-      .ci{}
-      .account{
-        font-size: 12px;
-      }
+			.back {
+        padding: 12px 16px;
+        display: flex;
+        justify-content: space-between;
+				.icon {
+          margin-right: 12px
+        }
+        p{
+          font-size:14px;
+          font-weight: bold;
+          line-height:1;
+        }
+			}
+			.save {
+        padding: 12px 16px;
+        font-size: 14px;
+        background-color: #fff;
+        border-radius: 100px;
+			}
 		}
 	}
 }
