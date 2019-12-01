@@ -1,6 +1,8 @@
 <template>
   <div>
-    <router-view></router-view>
+    <transition mode="out-in">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -12,6 +14,7 @@ import VueRouter from "vue-router";
 
 import Index from "index.vue";
 import Lookback from "./packs/pages/lookback.vue";
+import Focus from "./packs/pages/focus.vue";
 import LookbackMonth from "./packs/pages/month.vue";
 import LookbackReflection from "./packs/pages/reflection.vue";
 import LookbackCuriosity from "./packs/pages/curiosity.vue";
@@ -22,6 +25,7 @@ const router = new VueRouter({
   routes: [
     { path: "/", component: Index },
     { path: "/lookback", component: Lookback },
+    { path: "/focus", component: Focus },
     { path: "/lookback/month", component: LookbackMonth },
     { path: "/lookback/reflection", component: LookbackReflection },
     { path: "/lookback/curiosity", component: LookbackCuriosity },
@@ -51,4 +55,26 @@ export default {
 <style>
 @import "./style/global.scss";
 @import "./style/_mixin.scss";
+
+.v-enter {
+  transform: translate(0px, -4px);
+  opacity: 0;
+}
+.v-enter-to {
+  opacity: 1;
+}
+.v-enter-active {
+  transition: all 1s 0s ease;
+}
+.v-leave {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.v-leave-to {
+  transform: translate(0px, -4px);
+  opacity: 0;
+}
+.v-leave-active {
+  transition: all .5s 0s ease;
+}
 </style>

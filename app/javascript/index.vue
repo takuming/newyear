@@ -8,9 +8,8 @@
         </div>
         <div class="section_contents">
           <ul class="content_wrapper">
-
-            <li class="content _lookback">
-              <router-link to="/opening">
+              <li class="content _lookback">
+              <router-link to="/lookback">
                 <div class="img">
                   <img v-bind:src="require('./packs/images/note_lookback.png')">
                 </div>
@@ -20,10 +19,10 @@
                   <p>今年を振り返りどんな１年だったかを明らかにしましょう。</p>
                 </div>
               </router-link>
-            </li>
+              </li>
 
             <li class="content _interest">
-              <router-link to="/lookback">
+              <router-link to="/focus">
               <div class="img">
                 <img v-bind:src="require('./packs/images/note_interest.png')">
               </div>
@@ -35,7 +34,7 @@
               </router-link>
             </li>
             <li class="content _goalset">
-              <router-link to="/lookback">
+              <router-link to="/setgoal">
               <div class="img">
                 <img v-bind:src="require('./packs/images/note_goalset.png')">
               </div>
@@ -80,15 +79,20 @@ export default {
 <style lang="scss" scoped>
 @import "./app/javascript/style/global.scss";
 @import "./app/javascript/style/_mixin.scss";
+
 .index_wrapper{
   width: 1160px;
   margin: 0 auto;
-  padding: 40px 0 48px;
+  padding: 0px 0 48px;
 }
 .title {
   @include fst-m;
   text-align: center;
   margin-bottom:48px;
+  h2{
+    letter-spacing: 2px;
+    line-height: 2.8rem;
+  }
 }
 .section_contents {
 	.content_wrapper {
@@ -96,20 +100,21 @@ export default {
     justify-content: space-between;
 		.content{
       width: 23%;
-      transition:$transiton-base ;
       &:hover{
-        transition:$transiton-base ;
         .img{
           top: -8px;
+          transition:$transiton-base ;
+           transition: top 0.1s;
           position: relative;
         }
       }
 			 .img {
+         top:0px;
          margin-bottom: 24px;
+         transition:$transiton-base ;
          img{
            width: 100%;
            height: auto;
-           transition:$transiton-base ;
          }
 			}
 			 .text {
@@ -131,5 +136,27 @@ export default {
 			}
 	}
 }
+}
+
+.content-enter {
+  transform: translate(0px, -4px);
+  opacity: 0;
+}
+.content-enter-to {
+  opacity: 1;
+}
+.content-enter-active {
+  transition: all 0.1s 0s ease;
+}
+.content-leave {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.content-leave-to {
+  transform: translate(0px, -4px);
+  opacity: 0;
+}
+.content-leave-active {
+  transition: all .5s 0s ease;
 }
 </style>

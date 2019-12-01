@@ -1,10 +1,10 @@
 <template>
   <div class="month">
-    <HeaderNav2></HeaderNav2>
+    <HeaderLb></HeaderLb>
     <div class="note">
       <div class="wrapper">
           <div class="title">
-            <h3>1月~4月を振り返る</h3>
+            <h3>上半期をふりかえろう🧐</h3>
           </div>
           <div class="monthlist">
             <ul class="wrapper" v-for="l in lbmonths" >
@@ -84,12 +84,12 @@
 <script>
 import axios from 'axios';
 
-import HeaderNav2 from "../components/header-nav2.vue";
+import HeaderLb from "../components/header-lb.vue";
 
 export default {
   el: '#demo',
   components: {
-    HeaderNav2
+    HeaderLb
   },
   data() {
    return {
@@ -117,6 +117,7 @@ export default {
   background-color:#FAF8EC;
   padding-bottom: 80px;
 	.note {
+    @include note;
     background-color: white;
     border-radius:8px;
     padding: 48px;
@@ -134,15 +135,15 @@ export default {
           margin-bottom: 32px;
         }
 			}
-			.monthlist {raiul
+			.monthlist {
 				.wrapper {
           display: flex;
           flex-wrap: wrap;
           justify-content: space-between;
 					.detail {
-            width: calc(46% - 16px);
+            width: calc(44% - 16px);
             height: 400px;
-            padding: 24px;
+            padding: 24px 40px  24px 40px;
             &:nth-child(odd){
               border-right: 1px solid #f3f3f4;
             }
@@ -157,7 +158,7 @@ export default {
             }
             textarea{
               @include fsn-m;
-              padding: 0;
+              @include text;
             }
 					}
 				}
