@@ -1,16 +1,17 @@
 <template>
+<transition name="fade">
     <div id="demo" class="opening">
       <div class="wrapper">
-        <transition name="fade">
+        
             <div class="sec-first">
               <div class="title">
                 <p>INTRODUCTION</p>
                 <h3>今年の内省リスト</h3>
               </div>
             </div>
-        </transition>
       </div> 
     </div>
+</transition>
 </template>
 
 <script>
@@ -37,13 +38,27 @@ export default {
 @import "./app/javascript/style/global.scss";
 @import "./app/javascript/style/_mixin.scss";
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter {
+  transform: translate(0px, -8px);
   opacity: 0;
 }
-
+.fade-enter-to {
+  opacity: 1;
+}
+.fade-enter-active {
+  transition: all 1s 0s ease;
+}
+.fade-leave {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.fade-leave-to {
+  transform: translate(0px, -8px);
+  opacity: 0;
+}
+.fade-leave-active {
+  transition: all .5s 0s ease;
+}
 .opening{
   background-color: #667695;
       width: 100%;

@@ -1,4 +1,5 @@
 <template>
+<transition>
     <div class="lookback">
       <HeaderNav></HeaderNav>
       <div class="note">
@@ -13,7 +14,9 @@
                     <p class="step">STEP1.</p>
                     <h3>月を振り返る</h3>
                   </div>
-                  <div class="right"></div>    
+                  <div class="right">
+                    <i class="material-icons">keyboard_arrow_right</i>
+                  </div>    
               </a>
             </li>
             <li>
@@ -25,6 +28,7 @@
           </ul>
       </div>
     </div>
+  </transition>
 </template>
 
 <script>

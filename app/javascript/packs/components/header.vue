@@ -28,8 +28,9 @@ export default {
 <style lang="scss" scoped>
 .header {
   background: none;
-  width: 100%;
-  padding: 20px 32px;
+  width: 92%;
+  padding: 40px 0px;
+  margin: 0 auto 0;
 	.nav {
 		.wrapper {
       display: flex;
