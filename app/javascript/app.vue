@@ -12,6 +12,7 @@ import VueRouter from "vue-router";
 
 import Index from "index.vue";
 import Lookback from "./packs/pages/lookback.vue";
+import Focus from "./packs/pages/focus.vue";
 import LookbackMonth from "./packs/pages/month.vue";
 import LookbackReflection from "./packs/pages/reflection.vue";
 import LookbackCuriosity from "./packs/pages/curiosity.vue";
@@ -22,6 +23,7 @@ const router = new VueRouter({
   routes: [
     { path: "/", component: Index },
     { path: "/lookback", component: Lookback },
+    { path: "/focus", component: Focus },
     { path: "/lookback/month", component: LookbackMonth },
     { path: "/lookback/reflection", component: LookbackReflection },
     { path: "/lookback/curiosity", component: LookbackCuriosity },
