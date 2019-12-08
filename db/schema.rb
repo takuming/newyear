@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_30_023543) do
+ActiveRecord::Schema.define(version: 2019_11_30_005953) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -27,21 +27,24 @@ ActiveRecord::Schema.define(version: 2019_11_30_023543) do
   end
 
   create_table "employees", force: :cascade do |t|
-    t.string "name"
-    t.string "department"
-    t.integer "gender"
+    t.string "name", default: "", null: false
+    t.string "department", default: "", null: false
+    t.integer "gender", default: 0, null: false
     t.date "birth"
     t.date "joined_date"
-    t.bigint "payment"
-    t.text "note"
+    t.bigint "payment", default: 0, null: false
+    t.text "note", default: "", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "lock_version"
+    t.index ["user_id"], name: "index_employees_on_user_id"
   end
 
   create_table "goals", force: :cascade do |t|
-    t.string "title"
-    t.text "action"
-    t.text "problem"
+    t.string "title", default: ""
+    t.text "action", default: ""
+    t.text "problem", default: ""
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -50,29 +53,21 @@ ActiveRecord::Schema.define(version: 2019_11_30_023543) do
 
   create_table "lbmonths", force: :cascade do |t|
     t.text "jan"
-    t.text "feb"
-    t.text "mar"
-    t.text "apr"
-    t.text "may"
-    t.text "jun"
-    t.text "jul"
-    t.text "aug"
-    t.text "sep"
-    t.text "oct"
-    t.text "nov"
-    t.text "dec"
+    t.text "feb", default: ""
+    t.text "mar", default: ""
+    t.text "apr", default: ""
+    t.text "may", default: ""
+    t.text "jun", default: ""
+    t.text "jul", default: ""
+    t.text "aug", default: ""
+    t.text "sep", default: ""
+    t.text "oct", default: ""
+    t.text "nov", default: ""
+    t.text "dec", default: ""
     t.integer "Twentynineteen_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["Twentynineteen_id"], name: "index_lbmonths_on_Twentynineteen_id"
-  end
-
-  create_table "setoals", force: :cascade do |t|
-    t.string "title", default: ""
-    t.text "action", default: ""
-    t.text "problem", default: ""
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "twentynineteens", force: :cascade do |t|
@@ -91,7 +86,7 @@ ActiveRecord::Schema.define(version: 2019_11_30_023543) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name", default: "", null: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

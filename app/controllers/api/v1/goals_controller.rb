@@ -23,6 +23,15 @@ class Api::V1::GoalsController < ApiController
     end
   end
 
+  def update
+    @goal = Goal.find(params[:id])
+    if @goal.update_attributes(goal_params)
+      head :no_content
+    else
+      render json: { errors: @goal.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def set_goal

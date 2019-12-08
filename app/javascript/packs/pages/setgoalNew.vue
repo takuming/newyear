@@ -59,11 +59,7 @@ export default {
       .post('/api/v1/goals', this.goal)
       .then(response => {
         let g = response.data;
-        this.$router.push({name: 'setgoalEdit', params:{id: g.id}})
-      })
-
-      .then(response => {
-        this.$router.push({path:'/lookback/month'})
+        this.$router.push({name: 'SetGoalEdit', params:{id: g.id}})
       })
     }
   },
