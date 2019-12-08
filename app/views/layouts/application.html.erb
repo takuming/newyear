@@ -10,11 +10,11 @@
   </head>
 
   <body>
-    <%= if request.path == '/' %>
+    <% if request.path == '/' %>
       <%= render 'partial/header' %>
-    <%=else%>
+    <%else%>
       <div></div>
-    <%=end%>
+    <%end%>
     
     <% if flash[:notice] %>
       <div class="alert alert-info">
