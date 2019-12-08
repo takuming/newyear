@@ -14,5 +14,10 @@ Rails.application.routes.draw do
       resources :lbmonths, only: [:index, :show, :create]
     end
   end
+  namespace :api, {format: 'json'} do
+    namespace :v1 do
+      resources :users, only: [:index,:destroy]
+    end
+  end
   
 end
