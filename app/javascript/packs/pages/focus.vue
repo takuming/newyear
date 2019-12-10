@@ -1,9 +1,9 @@
 <template>
-  <div class="reflection">
-    <HeaderLb></HeaderLb>
+  <div class="focus">
+    <HeaderIndex></HeaderIndex>
     <div class="title">
-      <h3>今年の内省リスト</h3>
-      <p>負の側面からポジティブな感情を見つけましょう</p>
+      <p>PHASE2</p>
+      <h3>取り組みたいことを 書き上げる</h3>
     </div>
     <div class="note">
       <ul class="quesitions">
@@ -18,17 +18,24 @@
 
 <script>
 
-import HeaderLb from "../components/header-lb.vue";
-
+import HeaderIndex from "../components/header-index.vue";
 export default {
   components: {
-    HeaderLb
+    HeaderIndex
   },
  data() {
    return {
      questions: [
-      { title: '今年あなたに最も欠けていたことはなんですか？' },
-      { title: '今年最も時間を使ってしまっていたことは？' },
+      { title: '変えたいこと' },
+      { title: 'つづけたいこと' },
+      { title: 'チャレンジしたいこと' },
+      { title: 'どんな影響を周りの人に与えたい' },
+      { title: 'どんな習慣を持ちたい' },
+      { title: 'どんな感情で来年を終えたい' },
+      { plholder: '能力、時間、感情・・・・・なんでも書き出してみましょう。' },
+      { plholder: 'この月にあったことを2つ~５つなんでも書き出そう' },
+      { plholder: '能力、時間、感情・・・・・なんでも書き出してみましょう。' },
+      { plholder: 'この月にあったことを2つ~５つなんでも書き出そう' },
       { plholder: '能力、時間、感情・・・・・なんでも書き出してみましょう。' },
       { plholder: 'この月にあったことを2つ~５つなんでも書き出そう' },
     ]
@@ -46,8 +53,8 @@ export default {
     color: #000;
   }
 }
-.reflection {
-  background-color:#667695;
+.focus {
+  background-color:#FFF5EF;
   padding-bottom: 80px;
 	.title {
     margin-bottom: 48px;
@@ -55,18 +62,16 @@ export default {
       @include fst-l;
       text-align: center;
       margin-bottom: 8px;
-      color: #fff;
+      color: #000;
     }
     p{
       @include fsn-s;
       text-align: center;
-      color: #fff;
+      color: #000;
     }
 	}
 	.note {
     @include note;
-    padding: 72px;
-    width: 95%;
 		.quesitions {
 			.item {
         border-bottom: 1px solid #f3f3f4;

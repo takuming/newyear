@@ -66,3 +66,8 @@ gem 'webpacker', github: 'rails/webpacker'
 gem 'devise'
 
 gem 'activeadmin'
+
+gem 'materialize-sass'
+gem 'material_icons'
+
+gem "jquery-rails"

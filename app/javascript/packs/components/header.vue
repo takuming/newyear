@@ -3,7 +3,9 @@
     <nav class="nav">
       <ul class="wrapper">
         <li class="about">サービスについて</li>
-        <li class="ci"><img v-bind:src="require('../images/ci.svg')" alt="newyear"></li>
+        <li class="ci">
+          <img v-bind:src="require('../images/ci.svg')" alt="newyear">
+          </li>
         <li class="account">
           <a v-on:click="signOut">アカウント</a> 
         </li>
@@ -16,20 +18,31 @@
 import axios from 'axios';
 
 export default {
+  data() {
+    return {
+      user: {}
+    }
+  },
+   mounted () {
+    axios
+      .get(`/api/v1/users/${this.$route.params.id}.json`)
+      .then(response => (this.user = response.data))
+  },
   methods: {
     signOut: function() {
       axios
-      .delete('/destroy_user_session')
+      .delete(`/api/v1/users/`)
     }
-  }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .header {
   background: none;
-  width: 100%;
-  padding: 20px 32px;
+  width: 92%;
+  padding: 40px 0px;
+  margin: 0 auto 0;
 	.nav {
 		.wrapper {
       display: flex;

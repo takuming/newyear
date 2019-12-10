@@ -60,6 +60,13 @@
   line-height: 1.6;
 };
 
+@mixin text{
+  font-size: 16px;
+  line-height: 2;
+  padding: 0;
+  height: 304px;            
+}
+
 // 英語フォント
 @mixin eng_font{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -101,14 +108,14 @@ outline: none;
 
 
 $text-color: #000 ;
-$transiton-base:all 0.8s ease-in;
+$transiton-base:all 0.24s ease-in;
 
 
 @mixin note{
   background-color: white;
     border-radius:8px;
-    padding: 48px;
-    width: 95%;
+    padding: 48px 88px 96px;
+    width: 82%;
     margin: 0 auto;
     box-shadow: 1px 1px 12px 4px rgba(0,0,0, 0.04);
 }
