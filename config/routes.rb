@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   # APIコントローラへのルーティング
   namespace :api, {format: 'json'} do
     namespace :v1 do
+      resources :goals, only: [:index, :show, :create,:update]
+    end
+  end
+  namespace :api, {format: 'json'} do
+    namespace :v1 do
       resources :employees, only: [:index, :show]
     end
   end
@@ -19,5 +24,6 @@ Rails.application.routes.draw do
       resources :users, only: [:index,:destroy]
     end
   end
+  
   
 end
