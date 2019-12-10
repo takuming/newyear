@@ -32,12 +32,12 @@
 <script>
 import axios from 'axios';
 
-import HeaderNav2 from "../components/header-nav2.vue";
+import HeaderLb from "../components/header-lb.vue";
 
 export default {
   el: '#demo',
   components: {
-    HeaderNav2
+    HeaderLb
   },
   data: function (){
    return {

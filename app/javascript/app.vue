@@ -28,13 +28,16 @@ const router = new VueRouter({
   routes: [
     { path: "/", component: Index },
     { path: "/lookback", component: Lookback },
-    { path: "/setgoal", name: 'SetGoal',component: Setgoal },
+    { path: "/focus", component: Focus },
+
+    { path: "/setgoal", name: 'Setgoal',component: Setgoal },
     { path: "/setgoal/new", component: SetgoalNew },
     { path: "/setgoal/:id(\\d+)/edit'", name: 'SetGoalEdit',component: SetgoalEdit },
 
     { path: "/lookback/month", component: LookbackMonth },
     { path: "/lookback/reflection", component: LookbackReflection },
     { path: "/lookback/curiosity", component: LookbackCuriosity },
+
     { path: "/opening", component: Opening },
     { path: "/intro", component: Intro },
   ]

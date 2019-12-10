@@ -1,8 +1,13 @@
 class Api::V1::LbmonthsController < ApiController
   before_action :set_lbmonth, only: [:show]
 
+  # ActiveRecordのレコードが見つからなければ404 not foundを応答する
+  rescue_from ActiveRecord::RecordNotFound do |exception|
+    render json: { error: '404 not found' }, status: 404
+  end
+
   def index
-    lbmonths = Lbmonth.limit(1)
+    lbmonths = Lbmonth.all
     render json: lbmonths
   end
 
@@ -10,24 +15,10 @@ class Api::V1::LbmonthsController < ApiController
     render json: @lbmonth
   end
 
-  def create
-    lbmonth = Lbmonth.new(lbmonth_params)
-    if lbmonth.save
-      render json: lbmonth, status: :created
-    else
-      render json: { errors: lbmonth.errors.full_messages }, status: :unprocessable_entity
-    end
-  end
-
   private
 
-    def set_lbmonth
-      @lbmonth = Lbmonth.find(params[:id])
-    end
-
-    def lbmonth_params
-      params.fetch(:lbmonth, {}).permit(:jan, :feb, :mar, :apr, :may, :jun, :jul ,:aug,:sep,:oct,:nov,:dec)
-    end
-
+  def set_lbmonth
+    @Lbmonth = Lbmonth.find(params[:id])
+  end
 
 end

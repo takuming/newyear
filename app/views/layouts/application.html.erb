@@ -10,8 +10,8 @@
   </head>
 
   <body>
-    <% if request.path == '/' %>
-      <%= render 'partial/header' %>
+    <% if request.path == current_page?(root_path) %>
+      <%# <%= render 'partial/header' %> %>
     <%else%>
       <div></div>
     <%end%>
